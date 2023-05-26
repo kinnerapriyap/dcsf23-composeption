@@ -26,7 +26,7 @@ fun Slide(
         color = background,
         contentColor = contentColor,
         content = {
-            Box(modifier = Modifier.padding(16.dp)) {
+            Box(modifier = Modifier.fillMaxSize().padding(16.dp)) {
                 content()
                 pageNumber?.let { PageCount(it) }
             }
