@@ -10,5 +10,5 @@ internal fun droidconSFColors(darkMode: Boolean) =
         primary = Color(0xFF8BC34A),
         secondary = Color(0xFF607D8B),
         onPrimary = Color(0xFF212121),
-        onSecondary = Color(0xFF757575)
+        onSecondary = Color(0xFFFFFFFF)
     )
