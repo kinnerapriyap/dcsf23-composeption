@@ -18,7 +18,7 @@ import common.Menu
 import slides.AboutMeSlide
 import slides.MenuSlide
 import slides.TitleSlide
-import slides.content.DialogSlide
+import slides.content.dialog.DialogSlide
 import slides.content.DrawerSlide
 import slides.content.listdetail.ListDetailSlide
 
@@ -34,7 +34,7 @@ fun App(
         color = screen.getBackground(),
         contentColor = screen.getContentColor(),
         content = {
-            Box(modifier = Modifier.padding(40.dp)) {
+            Box(modifier = Modifier.fillMaxSize().padding(40.dp)) {
                 Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
                 AnimatedContent(
                     targetState = screen,
