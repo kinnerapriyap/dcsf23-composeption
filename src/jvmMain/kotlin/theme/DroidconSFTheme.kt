@@ -7,14 +7,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.DpSize
 
 @Composable
 fun DroidconSFTheme(
+    windowSize: DpSize,
     darkMode: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
     val droidconSFColors = droidconSFColors(darkMode = darkMode)
-    CompositionLocalProvider(LocalColors provides droidconSFColors) {
+    CompositionLocalProvider(
+        LocalColors provides droidconSFColors,
+        LocalWindowSize provides windowSize
+    ) {
         MaterialTheme(
             colors = droidconSFColors,
             content = content,
@@ -22,7 +27,9 @@ fun DroidconSFTheme(
     }
 }
 
-private val LocalColors = staticCompositionLocalOf {
+val LocalWindowSize = staticCompositionLocalOf { DpSize.Zero }
+
+val LocalColors = staticCompositionLocalOf {
     lightColors(
         primary = Color(0xFF8BC34A),
         secondary = Color(0xFF607D8B),
