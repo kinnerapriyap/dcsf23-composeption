@@ -3,14 +3,12 @@ package slides.content.listdetail
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
@@ -31,14 +29,14 @@ fun ListItem(
         onClick = onClick,
         enabled = enableClick,
         shape = HoleShape(
-            cornerRadius = with(LocalDensity.current) { 16.dp.toPx() },
-            punchSize = with(LocalDensity.current) { 16.dp.toPx() },
-            punchDistance = with(LocalDensity.current) { 16.dp.toPx() },
+            cornerRadius = with(LocalDensity.current) { 8.dp.toPx() },
+            punchSize = with(LocalDensity.current) { 8.dp.toPx() },
+            punchDistance = with(LocalDensity.current) { 8.dp.toPx() },
         ),
         color = MaterialTheme.colors.secondary,
     ) {
         Column(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
-            Text(
+            /*Text(
                 text = title,
                 style = MaterialTheme.typography.h6,
                 color = MaterialTheme.colors.onSecondary,
@@ -48,7 +46,7 @@ fun ListItem(
                 text = subtitle,
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onSecondary,
-            )
+            )*/
         }
     }
 }
