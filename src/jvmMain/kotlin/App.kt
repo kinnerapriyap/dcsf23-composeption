@@ -19,7 +19,7 @@ import slides.AboutMeSlide
 import slides.MenuSlide
 import slides.TitleSlide
 import slides.content.dialog.DialogSlide
-import slides.content.DrawerSlide
+import slides.content.drawer.DrawerSlide
 import slides.content.listdetail.ListDetailSlide
 
 @OptIn(ExperimentalAnimationApi::class)

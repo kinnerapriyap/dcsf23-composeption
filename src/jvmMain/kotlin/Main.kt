@@ -28,7 +28,7 @@ fun main() = application {
 
                 NavEvent.OnNextClicked -> onNextClicked(this)
                 NavEvent.OnBackClicked -> {
-                    removeLastOrNull()
+                    if (size > 1) removeLastOrNull()
                     lastOrNull()
                 }
             }?.let { if (it != last()) add(it) }
