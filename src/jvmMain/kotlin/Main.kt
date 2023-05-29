@@ -16,7 +16,7 @@ import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import slides.AboutMeSlide
-import slides.ContentSlide
+import slides.AgendaSlide
 import slides.MenuSlide
 import slides.TitleSlide
 import theme.DroidconSFTheme
@@ -25,12 +25,14 @@ import theme.DroidconSFTheme
 @Composable
 @Preview
 fun App() {
-    var screenState by remember { mutableStateOf<Screen>(Screen.Title) }
+    var screenState by remember { mutableStateOf<List<Screen>>(listOf(Screen.Title)) }
     fun handleNavigation(): (NavEvent) -> Unit = { navEvent ->
-        screenState = when (navEvent) {
-            NavEvent.onBackClicked -> onBackClicked()
-            NavEvent.onMenuClicked -> onMenuClicked()
-            NavEvent.onNextClicked -> onNextClicked(screenState)
+        screenState = screenState.toMutableList().apply {
+            when (navEvent) {
+                NavEvent.onBackClicked -> onBackClicked()
+                NavEvent.onMenuClicked -> onMenuClicked()
+                NavEvent.onNextClicked -> onNextClicked(screenState)
+            }?.let { add(it) }
         }
     }
     AnimatedContent(
@@ -40,7 +42,7 @@ fun App() {
                     slideOutVertically { height -> -height } + fadeOut()
         }
     ) {
-        when (it) {
+        when (it.last()) {
             Screen.Title ->
                 TitleSlide(
                     title = title,
@@ -56,7 +58,7 @@ fun App() {
                 )
 
             Screen.Agenda ->
-                ContentSlide(
+                AgendaSlide(
                     handleNavigation = handleNavigation()
                 )
 
@@ -71,12 +73,12 @@ fun App() {
 fun onMenuClicked() = Screen.Menu
 fun onBackClicked() = Screen.Menu
 
-fun onNextClicked(screen: Screen): Screen =
-    when (screen) {
+fun onNextClicked(screenState: List<Screen>): Screen? =
+    when (screenState.last()) {
         Screen.Title -> Screen.AboutMe
         Screen.AboutMe -> Screen.Agenda
         Screen.Agenda -> Screen.Menu
-        Screen.Menu -> screen
+        Screen.Menu -> screenState.getOrNull(screenState.size - 2)
     }
 
 sealed interface NavEvent {
