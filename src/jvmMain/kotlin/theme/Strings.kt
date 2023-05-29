@@ -6,4 +6,6 @@ const val aboutMeInfo = "Kinnera Priya Putti | she/her\n" +
         "Location: Near the sugar / Frankfurt\n" +
         "Currently: Android @ ioki GmbH\n"
 
-const val nextButtonText = "Next"
+const val agendaScreenTitle = "Agenda"
+
+const val menuButtonText = "Menu"
