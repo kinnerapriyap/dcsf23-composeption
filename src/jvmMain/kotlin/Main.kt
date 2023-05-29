@@ -20,13 +20,18 @@ fun main() = application {
     fun handleNavigation(): (NavEvent) -> Unit = { navEvent ->
         screenState = screenState.toMutableList().apply {
             when (navEvent) {
-                NavEvent.OnMenuClicked -> Screen.Menu
+                is NavEvent.OnMenuItemClicked -> navEvent.screen
+                NavEvent.OnMenuClicked -> {
+                    removeAll(subList(indexOf(Screen.AboutMe) + 1, lastIndex + 1))
+                    Screen.Menu
+                }
+
                 NavEvent.OnNextClicked -> onNextClicked(this)
                 NavEvent.OnBackClicked -> {
                     removeLastOrNull()
-                    last()
+                    lastOrNull()
                 }
-            }.let { if (it != Screen.Menu && it != last()) add(it) }
+            }?.let { if (it != last()) add(it) }
         }
     }
     Window(
