@@ -13,5 +13,6 @@ const val drawerSlideTitle = "Drawers"
 const val dialogSlideTitle = "Dialogs"
 
 const val menuText = "Menu"
+const val backButtonText = "Back"
 
 const val cupcakeIpsum = "Cupcake ipsum dolor sit amet biscuit. Muffin ice cream jelly candy I love. Gummies tiramisu halvah chocolate sugar plum croissant candy canes candy canes pie. Gummi bears cake topping halvah ice cream chupa chups. Tiramisu pastry jelly-o pie I love cake oat cake. Sweet sweet fruitcake bear claw cookie cheesecake chocolate I love sesame snaps. Liquorice dessert cheesecake liquorice dragée gummies I love toffee. Liquorice carrot cake shortbread croissant icing cheesecake brownie."

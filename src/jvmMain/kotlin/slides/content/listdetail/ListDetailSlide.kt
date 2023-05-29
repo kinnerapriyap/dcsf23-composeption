@@ -20,8 +20,10 @@ fun BoxScope.ListDetailSlide(
     ContentSlide(listDetailSlideTitle) {
         Row(modifier = Modifier.padding(top = 150.dp, start = 150.dp)) {
             ListOnDevice()
-            Spacer(modifier = Modifier.width(200.dp))
+            Spacer(modifier = Modifier.width(100.dp))
             DetailOnDevice()
+            Spacer(modifier = Modifier.width(100.dp))
+            ListDetailAnimationOnDevice()
         }
     }
 }

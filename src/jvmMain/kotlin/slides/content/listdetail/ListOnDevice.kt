@@ -1,8 +1,6 @@
 package slides.content.listdetail
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,7 +19,6 @@ fun ListOnDevice(
     AndroidDeviceLazyColumn(width = width, ratio = ratio) {
         items(elements) { (title, subtitle) ->
             ListItem(title, subtitle) {}
-            Spacer(modifier = Modifier.height(12.dp))
         }
     }
 }
