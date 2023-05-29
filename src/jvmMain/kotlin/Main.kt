@@ -16,6 +16,8 @@ import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import slides.AboutMeSlide
+import slides.AgendaSlide
+import slides.MenuSlide
 import slides.TitleSlide
 import theme.DroidconSFTheme
 
@@ -24,29 +26,63 @@ import theme.DroidconSFTheme
 @Preview
 fun App() {
     var screenState by remember { mutableStateOf<Screen>(Screen.Title) }
-    DroidconSFTheme(darkMode = false) {
-        AnimatedContent(
-            targetState = screenState,
-            transitionSpec = {
-                slideInVertically { height -> height } + fadeIn() with
-                        slideOutVertically { height -> -height } + fadeOut()
-            }
-        ) {
-            when (it) {
-                Screen.Title ->
-                    TitleSlide(
-                        title = title,
-                        subTitle = author,
-                        nextImagePath = "ic_next.png",
-                    ) { screenState = Screen.AboutMe }
-
-                Screen.AboutMe ->
-                    AboutMeSlide(name = author)
-
-                Screen.Agenda -> TODO()
-            }
+    fun handleNavigation(): (NavEvent) -> Unit = { navEvent ->
+        screenState = when (navEvent) {
+            NavEvent.onBackClicked -> onBackClicked()
+            NavEvent.onMenuClicked -> onMenuClicked()
+            NavEvent.onNextClicked -> onNextClicked(screenState)
         }
     }
+    AnimatedContent(
+        targetState = screenState,
+        transitionSpec = {
+            slideInVertically { height -> height } + fadeIn() with
+                    slideOutVertically { height -> -height } + fadeOut()
+        }
+    ) {
+        when (it) {
+            Screen.Title ->
+                TitleSlide(
+                    title = title,
+                    subTitle = author,
+                    nextImagePath = "ic_next.png",
+                    handleNavigation = handleNavigation()
+                )
+
+            Screen.AboutMe ->
+                AboutMeSlide(
+                    name = author,
+                    handleNavigation = handleNavigation()
+                )
+
+            Screen.Agenda ->
+                AgendaSlide(
+                    handleNavigation = handleNavigation()
+                )
+
+            Screen.Menu ->
+                MenuSlide(
+                    handleNavigation = handleNavigation()
+                )
+        }
+    }
+}
+
+fun onMenuClicked() = Screen.Menu
+fun onBackClicked() = Screen.Menu
+
+fun onNextClicked(screen: Screen): Screen =
+    when (screen) {
+        Screen.Title -> Screen.AboutMe
+        Screen.AboutMe -> Screen.Agenda
+        Screen.Agenda -> Screen.Menu
+        Screen.Menu -> screen
+    }
+
+sealed interface NavEvent {
+    object onBackClicked : NavEvent
+    object onNextClicked : NavEvent
+    object onMenuClicked : NavEvent
 }
 
 fun main() = application {
@@ -57,6 +93,11 @@ fun main() = application {
         title = title,
         resizable = false,
     ) {
-        App()
+        DroidconSFTheme(
+            darkMode = false,
+            windowSize = state.size
+        ) {
+            App()
+        }
     }
 }

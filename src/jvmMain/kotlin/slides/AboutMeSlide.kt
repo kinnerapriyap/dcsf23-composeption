@@ -1,5 +1,6 @@
 package slides
 
+import NavEvent
 import aboutMeInfo
 import aboutMeScreenTitle
 import androidx.compose.desktop.ui.tooling.preview.Preview
@@ -18,9 +19,12 @@ import common.Slide
 @Preview
 fun AboutMeSlide(
     name: String,
-    modifier: Modifier = Modifier
+    handleNavigation: (NavEvent) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Slide(
+        onMenuClicked = { handleNavigation(NavEvent.onMenuClicked) },
+        onNextClicked = { handleNavigation(NavEvent.onNextClicked) },
         modifier = modifier,
         background = MaterialTheme.colors.secondary,
         contentColor = MaterialTheme.colors.onSecondary,
