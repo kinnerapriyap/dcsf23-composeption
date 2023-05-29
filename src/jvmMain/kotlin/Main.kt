@@ -22,7 +22,7 @@ fun main() = application {
             when (navEvent) {
                 is NavEvent.OnMenuItemClicked -> navEvent.screen
                 NavEvent.OnMenuClicked -> {
-                    removeAll(subList(indexOf(Screen.AboutMe) + 1, lastIndex + 1))
+                    indexOf(Screen.AboutMe).let { if (it != -1) removeAll(subList(it + 1, lastIndex + 1)) }
                     Screen.Menu
                 }
 
