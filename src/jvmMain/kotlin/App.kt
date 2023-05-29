@@ -10,12 +10,14 @@ import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import common.Menu
 import slides.AboutMeSlide
 import slides.AgendaSlide
@@ -41,7 +43,7 @@ fun App(
         color = screen.getBackground(),
         contentColor = screen.getContentColor(),
         content = {
-            Box(modifier = Modifier.fillMaxSize()) {
+            Box(modifier = Modifier.padding(40.dp)) {
                 Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
                 AnimatedContent(
                     targetState = screen,
@@ -63,6 +65,7 @@ fun App(
     )
 }
 
+@Composable
 fun Screen.getBackground() =
     when (this) {
         Screen.Title -> MaterialTheme.colors.primary
@@ -70,6 +73,7 @@ fun Screen.getBackground() =
         else -> MaterialTheme.colors.surface
     }
 
+@Composable
 fun Screen.getContentColor() =
     when (this) {
         Screen.Title -> MaterialTheme.colors.onPrimary
