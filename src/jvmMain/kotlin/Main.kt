@@ -29,9 +29,12 @@ fun App() {
     fun handleNavigation(): (NavEvent) -> Unit = { navEvent ->
         screenState = screenState.toMutableList().apply {
             when (navEvent) {
-                NavEvent.onBackClicked -> onBackClicked()
                 NavEvent.onMenuClicked -> onMenuClicked()
                 NavEvent.onNextClicked -> onNextClicked(screenState)
+                NavEvent.onBackClicked -> {
+                    removeLastOrNull()
+                    screenState.last()
+                }
             }?.let { add(it) }
         }
     }
@@ -71,7 +74,6 @@ fun App() {
 }
 
 fun onMenuClicked() = Screen.Menu
-fun onBackClicked() = Screen.Menu
 
 fun onNextClicked(screenState: List<Screen>): Screen? =
     when (screenState.last()) {
