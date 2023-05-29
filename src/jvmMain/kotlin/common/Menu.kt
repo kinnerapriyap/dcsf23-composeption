@@ -10,7 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import menuButtonText
+import menuText
 
 @Composable
 @Preview
@@ -22,6 +22,6 @@ fun BoxScope.Menu(
     Image(
         modifier = modifier.align(Alignment.TopEnd).size(48.dp).clickable { onMenuClicked() },
         painter = painterResource(menuImagePath),
-        contentDescription = menuButtonText,
+        contentDescription = menuText,
     )
 }

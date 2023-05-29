@@ -8,4 +8,4 @@ const val aboutMeInfo = "Kinnera Priya Putti | she/her\n" +
 
 const val agendaScreenTitle = "Agenda"
 
-const val menuButtonText = "Menu"
+const val menuText = "Menu"

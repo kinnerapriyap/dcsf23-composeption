@@ -16,7 +16,7 @@ import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import slides.AboutMeSlide
-import slides.AgendaSlide
+import slides.ContentSlide
 import slides.MenuSlide
 import slides.TitleSlide
 import theme.DroidconSFTheme
@@ -56,7 +56,7 @@ fun App() {
                 )
 
             Screen.Agenda ->
-                AgendaSlide(
+                ContentSlide(
                     handleNavigation = handleNavigation()
                 )
 

@@ -11,7 +11,7 @@ import common.Slide
 
 @Composable
 @Preview
-fun AgendaSlide(
+fun ContentSlide(
     handleNavigation: (NavEvent) -> Unit,
     modifier: Modifier = Modifier
 ) {
