@@ -56,8 +56,11 @@ fun App(
                                     ) +
                                     fadeOut(animationSpec = tween(ANIMATION_TIME_SLIDE))
 
-                            else -> slideInVertically { height -> height } + fadeIn() with
-                                    slideOutVertically { height -> -height } + fadeOut()
+                            else ->
+                                slideInVertically(animationSpec = tween(ANIMATION_TIME_SLIDE)) { height -> height } +
+                                        fadeIn(animationSpec = tween(ANIMATION_TIME_SLIDE)) with
+                                        slideOutVertically(animationSpec = tween(ANIMATION_TIME_SLIDE)) { height -> -height } +
+                                        fadeOut(animationSpec = tween(ANIMATION_TIME_SLIDE))
                         }
                     }
                 ) { currentScreen ->

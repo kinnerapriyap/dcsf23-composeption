@@ -28,7 +28,7 @@ fun BoxScope.ListDetailSlide(
             Plus()
             DetailOnDevice()
             RightArrow()
-            ListDetailInfiniteAnimationOnDevice()
+            ListDetailAnimationOnDevice()
         }
     }
 }
