@@ -11,6 +11,7 @@ fun onNextClicked(screenState: List<Screen>): Screen =
         Screen.AboutMe -> Screen.Menu
         Screen.ListDetail -> Screen.Menu
         Screen.Dialog -> Screen.Menu
+        Screen.ContentToContent -> Screen.Menu
         Screen.Drawer -> Screen.Menu
         Screen.Menu -> screenState.last()
     }

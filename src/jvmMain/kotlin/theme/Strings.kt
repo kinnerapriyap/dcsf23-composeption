@@ -14,6 +14,8 @@ const val dialogSlideTitle = "Dialogs"
 const val dialogTitle = "Do you want a cupcake?"
 const val showDialogText = "Show dialog"
 
+const val contentToContentSlideTitle = "Content to Content"
+
 const val menuText = "Menu"
 const val backButtonText = "Back"
 

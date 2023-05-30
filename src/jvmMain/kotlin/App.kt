@@ -18,6 +18,7 @@ import common.Menu
 import slides.AboutMeSlide
 import slides.MenuSlide
 import slides.TitleSlide
+import slides.content.ctoc.ContentToContentSlide
 import slides.content.dialog.DialogSlide
 import slides.content.drawer.DrawerSlide
 import slides.content.listdetail.ListDetailSlide
@@ -48,6 +49,7 @@ fun App(
                         Screen.AboutMe -> AboutMeSlide(name = author)
                         Screen.Dialog -> DialogSlide()
                         Screen.Drawer -> DrawerSlide()
+                        Screen.ContentToContent -> ContentToContentSlide()
                         Screen.ListDetail -> ListDetailSlide()
                         Screen.Menu -> MenuSlide {
                             handleNavigation(NavEvent.OnMenuItemClicked(it))
