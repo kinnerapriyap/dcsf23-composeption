@@ -18,8 +18,10 @@ const val contentToContentSlideTitle = "Content to Content"
 
 const val menuText = "Menu"
 const val backButtonText = "Back"
+const val moreButtonText = "More sugar"
+const val lessButtonText = "Less sugar"
 
-const val cupcakeIpsumTiny = "Cupcake ipsum dolor sit amet soufflé toffee. Liquorice chupa chups gummies gummi bears. "
+const val cupcakeIpsumTiny = "Cupcake ipsum dolor sit amet soufflé toffee. Liquorice chupa chups gummies gummi bears."
 const val cupcakeIpsumShort =
     "Cupcake ipsum dolor sit amet soufflé toffee. Liquorice I love I love sweet roll biscuit chupa chups gummies gummi bears. Biscuit cake biscuit dessert I love apple pie jelly donut."
 const val cupcakeIpsum =
