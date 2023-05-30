@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import agendaSlideTitle
+import androidx.compose.foundation.layout.padding
 
 @Composable
 @Preview
@@ -20,7 +21,7 @@ fun BoxScope.Menu(
     onMenuClicked: () -> Unit,
 ) {
     Image(
-        modifier = modifier.align(Alignment.TopEnd).size(48.dp).clickable { onMenuClicked() },
+        modifier = modifier.padding(40.dp).align(Alignment.TopEnd).size(48.dp).clickable { onMenuClicked() },
         painter = painterResource(menuImagePath),
         contentDescription = agendaSlideTitle,
     )

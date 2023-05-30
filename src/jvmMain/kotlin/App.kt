@@ -1,7 +1,10 @@
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.animation.with
@@ -13,6 +16,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.unit.dp
 import common.Menu
 import slides.AboutMeSlide
@@ -22,6 +26,9 @@ import slides.content.ctoc.ContentToContentSlide
 import slides.content.dialog.DialogSlide
 import slides.content.drawer.DrawerSlide
 import slides.content.listdetail.ListDetailSlide
+
+
+private const val ANIMATION_TIME_SLIDE = 3000
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -35,24 +42,36 @@ fun App(
         color = screen.getBackground(),
         contentColor = screen.getContentColor(),
         content = {
-            AnimatedContent(
-                targetState = screen,
-                transitionSpec = {
-                    slideInVertically { height -> height } + fadeIn() with
-                            slideOutVertically { height -> -height } + fadeOut()
-                }
-            ) { currentScreen ->
-                Box(modifier = Modifier.fillMaxSize().padding(40.dp)) {
-                    Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
-                    when (currentScreen) {
-                        Screen.Title -> TitleSlide(title = title, subTitle = author)
-                        Screen.AboutMe -> AboutMeSlide(name = author)
-                        Screen.Dialog -> DialogSlide()
-                        Screen.Drawer -> DrawerSlide()
-                        Screen.ContentToContent -> ContentToContentSlide()
-                        Screen.ListDetail -> ListDetailSlide()
-                        Screen.Agenda -> AgendaSlide {
-                            handleNavigation(NavEvent.OnMenuItemClicked(it))
+            Box(modifier = Modifier.fillMaxSize()) {
+                Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
+                AnimatedContent(
+                    targetState = screen,
+                    transitionSpec = {
+                        when (targetState) {
+                            is Screen.Agenda -> slideInHorizontally(animationSpec = tween(ANIMATION_TIME_SLIDE)) { width -> width } +
+                                    fadeIn(animationSpec = tween(ANIMATION_TIME_SLIDE)) with
+                                    scaleOut(
+                                        animationSpec = tween(ANIMATION_TIME_SLIDE),
+                                        transformOrigin = TransformOrigin(1f, 0f)
+                                    ) +
+                                    fadeOut(animationSpec = tween(ANIMATION_TIME_SLIDE))
+
+                            else -> slideInVertically { height -> height } + fadeIn() with
+                                    slideOutVertically { height -> -height } + fadeOut()
+                        }
+                    }
+                ) { currentScreen ->
+                    Box(modifier = Modifier.padding(40.dp)) {
+                        when (currentScreen) {
+                            Screen.Title -> TitleSlide(title = title, subTitle = author)
+                            Screen.AboutMe -> AboutMeSlide(name = author)
+                            Screen.Dialog -> DialogSlide()
+                            Screen.Drawer -> DrawerSlide()
+                            Screen.ContentToContent -> ContentToContentSlide()
+                            Screen.ListDetail -> ListDetailSlide()
+                            Screen.Agenda -> AgendaSlide {
+                                handleNavigation(NavEvent.OnMenuItemClicked(it))
+                            }
                         }
                     }
                 }
