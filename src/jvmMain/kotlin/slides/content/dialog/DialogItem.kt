@@ -5,12 +5,11 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.scaleIn
 import androidx.compose.animation.scaleOut
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -23,6 +22,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
@@ -70,16 +70,13 @@ internal fun DialogItem(
                 enter = scaleIn(animationSpec = tween(1000)),
                 exit = scaleOut(animationSpec = tween(1000)),
             ) {
-                Column(
-                    modifier = Modifier
-                        .wrapContentSize()
-                        .padding(24.dp)
-                        .border(1.dp, MaterialTheme.colors.secondary, RoundedCornerShape(4.dp))
-                        .padding(8.dp)
-                ) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                     Text(
+                        modifier = Modifier.align(Alignment.Center).background(MaterialTheme.colors.background)
+                            .padding(32.dp),
                         text = cupcakeIpsumShort,
-                        style = MaterialTheme.typography.body2
+                        style = MaterialTheme.typography.body1,
+                        textAlign = TextAlign.Center
                     )
                 }
             }
