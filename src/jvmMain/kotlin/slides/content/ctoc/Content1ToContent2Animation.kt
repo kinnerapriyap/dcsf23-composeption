@@ -1,6 +1,6 @@
 package slides.content.ctoc
 
-import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.Crossfade
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.animateContentSize
 import androidx.compose.desktop.ui.tooling.preview.Preview
@@ -31,7 +31,7 @@ import moreButtonText
 fun Content1ToContent2Animation() {
     var expanded by remember { mutableStateOf(false) }
     AndroidDeviceSurface {
-        AnimatedContent(targetState = expanded) {
+        Crossfade(targetState = expanded) {
             Column(
                 modifier = Modifier.fillMaxSize().padding(16.dp),
                 verticalArrangement = Arrangement.Center

@@ -28,7 +28,7 @@ fun BoxScope.ContentToContentSlide(
             Plus()
             Content2()
             RightArrow()
-            Content1ToContent2InfiniteAnimation()
+            Content1ToContent2Animation()
         }
 
     }

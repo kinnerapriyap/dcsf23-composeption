@@ -1,6 +1,6 @@
 package slides.content.ctoc
 
-import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.Crossfade
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -30,12 +30,12 @@ fun Content1ToContent2InfiniteAnimation() {
         initialValue = 0f,
         targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = LinearEasing),
+            animation = tween(2000, easing = LinearEasing),
             repeatMode = RepeatMode.Reverse
         )
     )
     AndroidDeviceSurface {
-        AnimatedContent(targetState = expanded.value > 0.5f) {
+        Crossfade(targetState = expanded.value > 0.5f, animationSpec = tween(1000)) {
             Box(modifier = Modifier.fillMaxSize().padding(16.dp)) {
                 Text(
                     modifier = Modifier.align(Alignment.Center),
