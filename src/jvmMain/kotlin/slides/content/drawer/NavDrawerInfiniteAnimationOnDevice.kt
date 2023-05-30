@@ -70,7 +70,7 @@ fun NavDrawerInfiniteAnimationOnDevice() {
                     onClick = { }
                 ) {
                     Image(
-                        painter = painterResource(if (target) "ic_back.png" else "ic_menu.png"),
+                        painter = painterResource(if (target) "ic_back.png" else "ic_crown.png"),
                         contentDescription = null
                     )
                 }
