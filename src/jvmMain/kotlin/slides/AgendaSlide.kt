@@ -21,7 +21,7 @@ import contentToContentSlideTitle
 import dialogSlideTitle
 import drawerSlideTitle
 import listDetailSlideTitle
-import menuText
+import agendaSlideTitle
 import slides.content.ContentSlide
 import slides.content.ctoc.Content1ToContent2InfiniteAnimation
 import slides.content.drawer.NavDrawerInfiniteAnimationOnDevice
@@ -29,11 +29,11 @@ import slides.content.listdetail.ListDetailInfiniteAnimationOnDevice
 
 @Composable
 @Preview
-fun BoxScope.MenuSlide(
+fun BoxScope.AgendaSlide(
     modifier: Modifier = Modifier,
     onMenuItemClicked: (Screen) -> Unit,
 ) {
-    ContentSlide(menuText) {
+    ContentSlide(agendaSlideTitle) {
         Row(
             modifier = modifier.padding(top = 120.dp).fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly

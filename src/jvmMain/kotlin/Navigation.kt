@@ -8,10 +8,10 @@ sealed interface NavEvent {
 fun onNextClicked(screenState: List<Screen>): Screen =
     when (screenState.last()) {
         Screen.Title -> Screen.AboutMe
-        Screen.AboutMe -> Screen.Menu
-        Screen.ListDetail -> Screen.Menu
-        Screen.Dialog -> Screen.Menu
-        Screen.ContentToContent -> Screen.Menu
-        Screen.Drawer -> Screen.Menu
-        Screen.Menu -> screenState.last()
+        Screen.AboutMe -> Screen.Agenda
+        Screen.ListDetail -> Screen.Agenda
+        Screen.Dialog -> Screen.Agenda
+        Screen.ContentToContent -> Screen.Agenda
+        Screen.Drawer -> Screen.Agenda
+        Screen.Agenda -> screenState.last()
     }

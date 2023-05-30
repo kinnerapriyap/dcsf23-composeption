@@ -23,7 +23,7 @@ fun main() = application {
                 is NavEvent.OnMenuItemClicked -> navEvent.screen
                 NavEvent.OnMenuClicked -> {
                     indexOf(Screen.AboutMe).let { if (it != -1) removeAll(subList(it + 1, lastIndex + 1)) }
-                    Screen.Menu
+                    Screen.Agenda
                 }
 
                 NavEvent.OnNextClicked -> onNextClicked(this)
