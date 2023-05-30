@@ -20,7 +20,7 @@ import common.AndroidDeviceLazyColumn
 
 @Composable
 @Preview
-fun ListDetailAnimationOnDevice(
+fun ListDetailAnimationOnDeviceWrong(
     modifier: Modifier = Modifier,
     width: Dp = 300.dp,
     ratio: Float = 16f / 9f,
@@ -30,7 +30,7 @@ fun ListDetailAnimationOnDevice(
     AndroidDeviceLazyColumn(
         width = width,
         ratio = ratio,
-        verticalSpacing = if (selected == null) 12.dp else 0.dp
+        verticalSpacing = 12.dp
     ) {
         item {
             IconButton(modifier = Modifier.size(48.dp), onClick = { selected = null }) {
@@ -40,6 +40,7 @@ fun ListDetailAnimationOnDevice(
         itemsIndexed(elements) { index, (title, subtitle) ->
             AnimatedVisibility(visible = selected == null || selected == index) {
                 ListItem(
+                    modifier = Modifier,
                     title = title,
                     subtitle = subtitle
                 ) { selected = index }

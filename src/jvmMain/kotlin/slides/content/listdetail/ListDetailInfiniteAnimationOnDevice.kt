@@ -19,7 +19,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import backButtonText
 import common.AndroidDeviceLazyColumn
-import org.jetbrains.skia.impl.Log
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -46,12 +45,8 @@ fun ListDetailInfiniteAnimationOnDevice() {
             }
         }
         itemsIndexed(elements) { index, (title, subtitle) ->
-            Log.error((selectedAnimationValue.value.toInt() % 2 == 0).toString())
-            Log.error((selectedAnimationValue.value.toInt()).toString())
-            Log.error("---")
             AnimatedVisibility(visible = selectedAnimationValue.value.toInt() % 2 == 0 || selectedAnimationValue.value.toInt() == index) {
                 ListItem(
-                    modifier = Modifier.animateItemPlacement(),
                     title = title,
                     subtitle = subtitle
                 ) { }
