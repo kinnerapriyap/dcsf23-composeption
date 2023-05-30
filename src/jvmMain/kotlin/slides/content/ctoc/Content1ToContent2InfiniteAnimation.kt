@@ -2,7 +2,6 @@ package slides.content.ctoc
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -37,7 +36,7 @@ fun Content1ToContent2InfiniteAnimation() {
     )
     AndroidDeviceSurface {
         AnimatedContent(targetState = expanded.value > 0.5f) {
-            Box(modifier = Modifier.fillMaxSize().padding(16.dp).animateContentSize()) {
+            Box(modifier = Modifier.fillMaxSize().padding(16.dp)) {
                 Text(
                     modifier = Modifier.align(Alignment.Center),
                     text = if (it) cupcakeIpsum else cupcakeIpsumShort

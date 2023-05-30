@@ -18,7 +18,7 @@ fun Content2() {
     AndroidDeviceSurface {
         Box(modifier = Modifier.fillMaxSize().padding(16.dp)) {
             Text(
-                modifier = Modifier.align(Alignment.TopCenter),
+                modifier = Modifier.align(Alignment.Center),
                 text = cupcakeIpsum
             )
         }
