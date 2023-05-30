@@ -35,15 +35,15 @@ fun App(
         color = screen.getBackground(),
         contentColor = screen.getContentColor(),
         content = {
-            Box(modifier = Modifier.fillMaxSize().padding(40.dp)) {
-                Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
-                AnimatedContent(
-                    targetState = screen,
-                    transitionSpec = {
-                        slideInVertically { height -> height } + fadeIn() with
-                                slideOutVertically { height -> -height } + fadeOut()
-                    }
-                ) { currentScreen ->
+            AnimatedContent(
+                targetState = screen,
+                transitionSpec = {
+                    slideInVertically { height -> height } + fadeIn() with
+                            slideOutVertically { height -> -height } + fadeOut()
+                }
+            ) { currentScreen ->
+                Box(modifier = Modifier.fillMaxSize().padding(40.dp)) {
+                    Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
                     when (currentScreen) {
                         Screen.Title -> TitleSlide(title = title, subTitle = author)
                         Screen.AboutMe -> AboutMeSlide(name = author)
