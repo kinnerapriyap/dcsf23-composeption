@@ -1,6 +1,5 @@
 package slides.content.drawer
 
-import androidx.compose.animation.animateContentSize
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.fillMaxSize
@@ -30,7 +29,7 @@ fun BottomSheetOnDevice() {
             bottomSheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
         )
         BottomSheetScaffold(
-            modifier = Modifier.fillMaxSize().animateContentSize(),
+            modifier = Modifier.fillMaxSize(),
             scaffoldState = scaffoldState,
             sheetContent = {
                 Surface(
