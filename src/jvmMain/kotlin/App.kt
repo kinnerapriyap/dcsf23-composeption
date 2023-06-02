@@ -1,3 +1,4 @@
+
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
@@ -25,7 +26,7 @@ import slides.SummarySlide
 import slides.ThankYouSlide
 import slides.TitleSlide
 import slides.content.ctoc.ContentToContentSlide
-import slides.content.dialog.DialogSlide
+import slides.content.dialog.DialogSlideToShow
 import slides.content.drawer.DrawerSlide
 import slides.content.listdetail.ListDetailSlide
 
@@ -70,7 +71,7 @@ fun App(
                         when (currentScreen) {
                             Screen.Title -> TitleSlide()
                             Screen.AboutMe -> AboutMeSlide(name = author)
-                            Screen.Dialog -> DialogSlide()
+                            Screen.Dialog -> DialogSlideToShow()
                             Screen.Drawer -> DrawerSlide()
                             Screen.ContentToContent -> ContentToContentSlide()
                             Screen.ListDetail -> ListDetailSlide()

@@ -3,24 +3,21 @@ package slides
 import Screen
 import agendaSlideTitle
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
-import common.AndroidDeviceSurface
 import common.ContentSlide
 import contentToContentSlideTitle
 import dialogSlideTitle
 import drawerSlideTitle
 import listDetailSlideTitle
 import slides.content.ctoc.Content1ToContent2InfiniteAnimation
+import slides.content.dialog.DialogAnimationOnDevice
 import slides.content.drawer.NavDrawerInfiniteAnimationOnDevice
 import slides.content.listdetail.ListDetailInfiniteAnimationOnDevice
 
@@ -45,13 +42,7 @@ fun AgendaSlide(
             }
             Column(verticalArrangement = Arrangement.Center) {
                 Button(onClick = { onMenuItemClicked(Screen.Dialog) }) { Text(dialogSlideTitle) }
-                AndroidDeviceSurface {
-                    Image(
-                        modifier = Modifier.fillMaxSize(),
-                        painter = painterResource("dialog_screenshot.png"),
-                        contentDescription = null
-                    )
-                }
+                DialogAnimationOnDevice()
             }
             Column(verticalArrangement = Arrangement.Center) {
                 Button(onClick = { onMenuItemClicked(Screen.ContentToContent) }) { Text(contentToContentSlideTitle) }

@@ -29,7 +29,7 @@ fun ListDetailInfiniteAnimationOnDevice() {
         initialValue = 0f,
         targetValue = 10f,
         animationSpec = infiniteRepeatable(
-            animation = tween(10000, easing = LinearEasing),
+            animation = tween(20000, easing = LinearEasing),
             repeatMode = RepeatMode.Reverse
         )
     )

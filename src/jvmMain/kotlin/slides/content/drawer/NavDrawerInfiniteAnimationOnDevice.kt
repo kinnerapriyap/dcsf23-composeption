@@ -39,7 +39,7 @@ fun NavDrawerInfiniteAnimationOnDevice() {
         initialValue = 0f,
         targetValue = 1f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = LinearEasing),
+            animation = tween(2000, easing = LinearEasing),
             repeatMode = RepeatMode.Reverse
         )
     )
@@ -48,10 +48,10 @@ fun NavDrawerInfiniteAnimationOnDevice() {
             targetState = expanded.value > 0.5f,
             transitionSpec = {
                 slideIntoContainer(
-                    animationSpec = tween(150, 150),
+                    animationSpec = tween(300, 300),
                     towards = AnimatedContentScope.SlideDirection.End
                 ) with slideOutOfContainer(
-                    animationSpec = tween(150),
+                    animationSpec = tween(300),
                     towards = AnimatedContentScope.SlideDirection.Start
                 )
             }
