@@ -68,7 +68,7 @@ fun App(
                 ) { currentScreen ->
                     Box(modifier = Modifier.padding(40.dp)) {
                         when (currentScreen) {
-                            Screen.Title -> TitleSlide(title = title, subTitle = author)
+                            Screen.Title -> TitleSlide()
                             Screen.AboutMe -> AboutMeSlide(name = author)
                             Screen.Dialog -> DialogSlide()
                             Screen.Drawer -> DrawerSlide()

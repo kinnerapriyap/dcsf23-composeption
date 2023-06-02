@@ -37,7 +37,7 @@ fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
         state = state,
-        title = title,
+        title = presentationTitle,
         resizable = false,
         onKeyEvent = {
             if (it.key == Key.DirectionRight && it.type == KeyEventType.KeyUp) {

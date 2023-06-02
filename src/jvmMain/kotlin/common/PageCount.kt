@@ -7,7 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import title
+import presentationTitle
 
 @Composable
 @Preview
@@ -17,7 +17,7 @@ fun BoxScope.PageCount(
 ) {
     Text(
         modifier = modifier.align(Alignment.BottomStart),
-        text = "$pageNumber | $title",
+        text = "$pageNumber | $presentationTitle",
         style = MaterialTheme.typography.overline
     )
 }

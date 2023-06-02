@@ -11,12 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import author
+import presentationTitle
 
 @Composable
 @Preview
 fun TitleSlide(
-    title: String,
-    subTitle: String,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -24,12 +24,12 @@ fun TitleSlide(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = title,
+            text = presentationTitle,
             style = MaterialTheme.typography.h2,
             fontWeight = FontWeight.SemiBold
         )
         Text(
-            text = subTitle,
+            text = author,
             style = MaterialTheme.typography.h3,
         )
     }
