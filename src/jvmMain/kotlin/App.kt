@@ -21,6 +21,8 @@ import androidx.compose.ui.unit.dp
 import common.Menu
 import slides.AboutMeSlide
 import slides.AgendaSlide
+import slides.SummarySlide
+import slides.ThankYouSlide
 import slides.TitleSlide
 import slides.content.ctoc.ContentToContentSlide
 import slides.content.dialog.DialogSlide
@@ -72,6 +74,8 @@ fun App(
                             Screen.Drawer -> DrawerSlide()
                             Screen.ContentToContent -> ContentToContentSlide()
                             Screen.ListDetail -> ListDetailSlide()
+                            Screen.Summary -> SummarySlide()
+                            Screen.ThankYou -> ThankYouSlide()
                             Screen.Agenda -> AgendaSlide {
                                 handleNavigation(NavEvent.OnMenuItemClicked(it))
                             }

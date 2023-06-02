@@ -6,4 +6,6 @@ sealed class Screen {
     object Dialog : Screen()
     object ContentToContent : Screen()
     object Agenda : Screen()
+    object Summary : Screen()
+    object ThankYou : Screen()
 }

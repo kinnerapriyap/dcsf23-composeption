@@ -13,5 +13,7 @@ fun onNextClicked(screenState: List<Screen>): Screen =
         Screen.Dialog -> Screen.Agenda
         Screen.ContentToContent -> Screen.Agenda
         Screen.Drawer -> Screen.Agenda
-        Screen.Agenda -> screenState.last()
+        Screen.Agenda -> Screen.Summary
+        Screen.Summary -> Screen.ThankYou
+        Screen.ThankYou -> screenState.last()
     }
