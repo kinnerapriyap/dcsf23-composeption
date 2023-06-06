@@ -6,7 +6,7 @@ const val aboutMeInfo = "Kinnera Priya Putti | she/her\n" +
         "Location: Near the sugar / Frankfurt\n" +
         "Currently: Android @ ioki GmbH\n"
 
-const val listDetailSlideTitle = "List <3 Detail"
+const val listDetailSlideTitle = "List \uD83D\uDC9A Detail"
 
 const val drawerSlideTitle = "Drawers"
 

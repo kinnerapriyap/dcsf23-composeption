@@ -3,7 +3,9 @@ package slides
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -28,9 +30,11 @@ fun TitleSlide(
             style = MaterialTheme.typography.h2,
             fontWeight = FontWeight.SemiBold
         )
+        Spacer(modifier = Modifier.height(20.dp))
         Text(
             text = author,
             style = MaterialTheme.typography.h3,
+            color = MaterialTheme.colors.primary
         )
     }
 }
