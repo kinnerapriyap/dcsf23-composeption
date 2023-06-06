@@ -13,6 +13,8 @@ const val drawerSlideTitle = "Drawers"
 const val dialogSlideTitle = "Dialogs"
 const val dialogTitle = "Do you want a cupcake?"
 const val showDialogText = "Show dialog"
+const val noAnimationDialog = "No Animation"
+const val animationDialog = "With Animation"
 
 const val contentToContentSlideTitle = "Content to Content"
 
@@ -21,7 +23,6 @@ const val summarySlideSlideTitle = "To sum it up"
 const val thankYouSlideTitle = "That's all folks!"
 
 const val agendaSlideTitle = "Agenda"
-const val backButtonText = "Back"
 const val moreButtonText = "More sugar"
 const val lessButtonText = "Less sugar"
 
