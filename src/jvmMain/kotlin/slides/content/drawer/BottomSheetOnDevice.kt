@@ -38,7 +38,7 @@ fun BottomSheetOnDevice() {
                     border = BorderStroke(2.dp, MaterialTheme.colors.secondary),
                     elevation = 4.dp
                 ) {
-                    Text(text = cupcakeIpsum, modifier = Modifier.padding(12.dp))
+                    Text(text = cupcakeIpsum, modifier = Modifier.padding(24.dp))
                 }
             },
             sheetPeekHeight = 150.dp

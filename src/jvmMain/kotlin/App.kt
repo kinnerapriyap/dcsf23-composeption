@@ -43,7 +43,7 @@ fun App(
         modifier = Modifier.fillMaxSize(),
         content = {
             Box(modifier = Modifier.fillMaxSize()) {
-                Menu { handleNavigation(NavEvent.OnMenuClicked) }
+                Menu(modifier = Modifier.padding(40.dp)) { handleNavigation(NavEvent.OnMenuClicked) }
                 AnimatedContent(
                     targetState = screen,
                     transitionSpec = {

@@ -2,7 +2,6 @@ package slides.content.listdetail
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.IconButton
@@ -12,11 +11,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import backButtonText
 import common.AndroidDeviceLazyColumn
+import common.Back
 
 @Composable
 @Preview
@@ -33,9 +31,7 @@ fun ListDetailAnimationOnDevice(
         verticalSpacing = if (selected == null) 12.dp else 0.dp
     ) {
         item {
-            IconButton(modifier = Modifier.size(48.dp), onClick = { selected = null }) {
-                Image(painter = painterResource("ic_back.png"), contentDescription = backButtonText)
-            }
+            IconButton(modifier = Modifier.size(48.dp), onClick = { selected = null }) { Back() }
         }
         itemsIndexed(elements) { index, (title, subtitle) ->
             AnimatedVisibility(visible = selected == null || selected == index) {

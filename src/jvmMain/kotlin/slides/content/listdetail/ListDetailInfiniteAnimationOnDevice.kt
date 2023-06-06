@@ -9,16 +9,12 @@ import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import backButtonText
 import common.AndroidDeviceLazyColumn
+import common.Back
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -40,9 +36,7 @@ fun ListDetailInfiniteAnimationOnDevice() {
         verticalSpacing = if (selectedAnimationValue.value.toInt() % 2 == 0) 12.dp else 0.dp
     ) {
         item {
-            IconButton(modifier = Modifier.size(48.dp), onClick = { }) {
-                Image(painter = painterResource("ic_back.png"), contentDescription = backButtonText)
-            }
+            IconButton(onClick = { }) { Back() }
         }
         itemsIndexed(elements) { index, (title, subtitle) ->
             AnimatedVisibility(visible = selectedAnimationValue.value.toInt() % 2 == 0 || selectedAnimationValue.value.toInt() == index) {

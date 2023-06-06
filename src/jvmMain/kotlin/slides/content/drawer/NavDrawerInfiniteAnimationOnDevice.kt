@@ -12,12 +12,10 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.with
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.IconButton
@@ -26,9 +24,11 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import common.AndroidDeviceSurface
+import common.Back
+import common.Menu
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -66,13 +66,12 @@ fun NavDrawerInfiniteAnimationOnDevice() {
                     ) {}
                 }
                 IconButton(
-                    modifier = Modifier.padding(12.dp).size(48.dp).align(Alignment.TopStart),
+                    modifier = Modifier.align(Alignment.TopStart).padding(12.dp),
                     onClick = { }
                 ) {
-                    Image(
-                        painter = painterResource(if (target) "ic_back.png" else "ic_crown.png"),
-                        contentDescription = null
-                    )
+                    if (target) Back() else Menu(
+                        modifier = Modifier.padding(12.dp),
+                        size = with(LocalDensity.current) { 24.dp.toPx() }) { }
                 }
             }
         }
