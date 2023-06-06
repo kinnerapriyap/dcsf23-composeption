@@ -18,10 +18,11 @@ fun DroidconSFTheme(
     val droidconSFColors = droidconSFColors(darkMode = darkMode)
     CompositionLocalProvider(
         LocalColors provides droidconSFColors,
-        LocalWindowSize provides windowSize
+        LocalWindowSize provides windowSize,
     ) {
         MaterialTheme(
             colors = droidconSFColors,
+            typography = droidconSFTypography,
             content = content,
         )
     }
