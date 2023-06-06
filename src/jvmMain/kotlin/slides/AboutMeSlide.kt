@@ -17,7 +17,6 @@ import common.Heading
 @Composable
 @Preview
 fun AboutMeSlide(
-    name: String,
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier.fillMaxSize()) {

@@ -13,7 +13,6 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -42,8 +41,6 @@ fun App(
 ) {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = screen.getBackground(),
-        contentColor = screen.getContentColor(),
         content = {
             Box(modifier = Modifier.fillMaxSize()) {
                 Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
@@ -70,7 +67,7 @@ fun App(
                     Box(modifier = Modifier.padding(40.dp)) {
                         when (currentScreen) {
                             Screen.Title -> TitleSlide()
-                            Screen.AboutMe -> AboutMeSlide(name = author)
+                            Screen.AboutMe -> AboutMeSlide()
                             Screen.Dialog -> DialogSlideToShow()
                             Screen.Drawer -> DrawerSlide()
                             Screen.ContentToContent -> ContentToContentSlide()
@@ -88,19 +85,3 @@ fun App(
         }
     )
 }
-
-@Composable
-fun Screen.getBackground() =
-    when (this) {
-        Screen.Title -> MaterialTheme.colors.primary
-        Screen.AboutMe -> MaterialTheme.colors.secondary
-        else -> MaterialTheme.colors.surface
-    }
-
-@Composable
-fun Screen.getContentColor() =
-    when (this) {
-        Screen.Title -> MaterialTheme.colors.onPrimary
-        Screen.AboutMe -> MaterialTheme.colors.onSecondary
-        else -> MaterialTheme.colors.onSurface
-    }
