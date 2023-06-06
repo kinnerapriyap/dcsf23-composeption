@@ -49,7 +49,7 @@ fun main() = application {
             } else false
         }
     ) {
-        DroidconSFTheme(darkMode = false, windowSize = state.size) {
+        DroidconSFTheme(darkMode = true, windowSize = state.size) {
             App(screenState.last(), handleNavigation())
         }
     }

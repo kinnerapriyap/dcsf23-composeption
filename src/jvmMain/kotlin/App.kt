@@ -43,7 +43,7 @@ fun App(
         modifier = Modifier.fillMaxSize(),
         content = {
             Box(modifier = Modifier.fillMaxSize()) {
-                Menu("ic_menu.png") { handleNavigation(NavEvent.OnMenuClicked) }
+                Menu { handleNavigation(NavEvent.OnMenuClicked) }
                 AnimatedContent(
                     targetState = screen,
                     transitionSpec = {

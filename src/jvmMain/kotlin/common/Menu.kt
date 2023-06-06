@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 @Composable
 @Preview
 fun BoxScope.Menu(
-    menuImagePath: String,
     modifier: Modifier = Modifier,
     onMenuClicked: () -> Unit,
 ) {
