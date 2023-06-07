@@ -19,11 +19,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.unit.dp
 import common.Menu
-import slides.AboutMeSlide
-import slides.AgendaSlide
-import slides.SummarySlide
-import slides.ThankYouSlide
-import slides.TitleSlide
+import slides.other.AboutMeSlide
+import slides.other.AgendaSlide
+import slides.other.SummarySlide
+import slides.other.ThankYouSlide
+import slides.other.TitleSlide
 import slides.content.ctoc.ContentToContentSlide
 import slides.content.dialog.DialogSlideToShow
 import slides.content.drawer.DrawerSlide

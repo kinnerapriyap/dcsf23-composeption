@@ -1,4 +1,4 @@
-package slides
+package slides.other
 
 import Screen
 import agendaSlideTitle
