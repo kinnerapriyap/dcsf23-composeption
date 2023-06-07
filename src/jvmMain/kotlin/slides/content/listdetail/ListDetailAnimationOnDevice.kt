@@ -32,9 +32,11 @@ fun ListDetailAnimationOnDevice(
         verticalSpacing = if (selected == null) 12.dp else 0.dp
     ) {
         item {
+            // Back Button
             IconButton(modifier = Modifier.size(48.dp), onClick = { selected = null }) { Back() }
         }
         itemsIndexed(elements) { index, (title, subtitle) ->
+            // Items List
             AnimatedVisibility(visible = selected == null || selected == index) {
                 ListItem(
                     title = title,
@@ -44,6 +46,7 @@ fun ListDetailAnimationOnDevice(
         }
         item {
             AnimatedVisibility(visible = selected != null) {
+                // Detail Item
                 selected?.let { DetailItem() }
             }
         }

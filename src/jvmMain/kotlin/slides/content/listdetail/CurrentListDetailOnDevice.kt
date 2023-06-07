@@ -34,6 +34,7 @@ fun CurrentListDetailOnDevice(
             IconButton(modifier = Modifier.size(48.dp), onClick = { selected = null }) { Back() }
         }
         itemsIndexed(elements) { index, (title, subtitle) ->
+            // Items List
             if (selected == null || selected == index) {
                 ListItem(
                     modifier = Modifier,
@@ -43,6 +44,7 @@ fun CurrentListDetailOnDevice(
             }
         }
         item {
+            // Detail Item
             selected?.let { DetailItem() }
         }
     }

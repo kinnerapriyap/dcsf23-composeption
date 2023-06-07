@@ -49,6 +49,7 @@ fun NavDrawerOnDevice() {
             }
         ) { target ->
             Box(modifier = Modifier.fillMaxSize()) {
+                // Navigation Drawer Content
                 if (target) {
                     Surface(
                         modifier = Modifier.width(200.dp).fillMaxHeight(),
@@ -57,13 +58,17 @@ fun NavDrawerOnDevice() {
                         elevation = 4.dp
                     ) {}
                 }
+
+                // Navigation / Back buttons
                 IconButton(
                     modifier = Modifier.padding(12.dp).size(48.dp).align(Alignment.TopStart),
                     onClick = { expanded = !expanded }
                 ) {
-                    if (target) Back() else Menu(
+                    if (target) Back()
+                    else Menu(
                         modifier = Modifier.padding(12.dp),
-                        size = with(LocalDensity.current) { 24.dp.toPx() }) { expanded = !expanded }
+                        size = with(LocalDensity.current) { 24.dp.toPx() }
+                    ) { expanded = !expanded }
                 }
             }
         }
