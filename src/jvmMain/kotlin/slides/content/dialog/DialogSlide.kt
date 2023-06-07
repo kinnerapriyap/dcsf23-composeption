@@ -12,8 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import common.ContentSlide
-import dialogSlideTitle
+import common.AndroidDeviceSurface
 import showDialogText
 
 @Composable
@@ -21,7 +20,7 @@ import showDialogText
 fun DialogSlide(
     modifier: Modifier = Modifier
 ) {
-    ContentSlide(dialogSlideTitle) {
+    AndroidDeviceSurface {
         var showDialog by remember { mutableStateOf(false) }
         Box(modifier = Modifier.fillMaxSize()) {
             if (showDialog) DialogItem { showDialog = false }

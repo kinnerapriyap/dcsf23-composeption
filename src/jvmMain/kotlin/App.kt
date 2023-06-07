@@ -25,7 +25,7 @@ import slides.other.SummarySlide
 import slides.other.ThankYouSlide
 import slides.other.TitleSlide
 import slides.content.ctoc.ContentToContentSlide
-import slides.content.dialog.DialogSlideToShow
+import slides.content.dialog.utils.DialogSlideToShow
 import slides.content.drawer.DrawerSlide
 import slides.content.listdetail.utils.ListDetailSlide
 

@@ -17,7 +17,7 @@ import dialogSlideTitle
 import drawerSlideTitle
 import listDetailSlideTitle
 import slides.content.ctoc.Content1ToContent2InfiniteAnimation
-import slides.content.dialog.DialogAnimationOnDevice
+import slides.content.dialog.utils.DialogAnimationOnDevice
 import slides.content.drawer.NavDrawerInfiniteAnimationOnDevice
 import slides.content.listdetail.utils.ListDetailInfiniteAnimationOnDevice
 

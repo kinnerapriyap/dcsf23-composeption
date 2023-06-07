@@ -1,4 +1,4 @@
-package slides.content.dialog
+package slides.content.dialog.utils
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -34,7 +34,7 @@ import cupcakeIpsumTiny
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 @Preview
-fun DialogAnimationOnDevice() {
+fun DialogNoAnimationOnDevice() {
     val transition = rememberInfiniteTransition()
     val expanded = transition.animateFloat(
         initialValue = 0f,
@@ -50,15 +50,15 @@ fun DialogAnimationOnDevice() {
         ) {
             AnimatedVisibility(
                 visible = expanded.value > 0.5f,
-                enter = fadeIn(animationSpec = tween(1000)),
-                exit = fadeOut(animationSpec = tween(1000))
+                enter = fadeIn(animationSpec = tween(0)),
+                exit = fadeOut(animationSpec = tween(0))
             ) {
                 Box(modifier = Modifier.fillMaxSize().background(color = Color(0x55222222)).zIndex(-1f))
             }
             AnimatedVisibility(
                 visible = expanded.value > 0.5f,
-                enter = scaleIn(animationSpec = tween(1000)),
-                exit = scaleOut(animationSpec = tween(1000)),
+                enter = scaleIn(animationSpec = tween(0)),
+                exit = scaleOut(animationSpec = tween(0)),
             ) {
                 Text(
                     modifier = Modifier
