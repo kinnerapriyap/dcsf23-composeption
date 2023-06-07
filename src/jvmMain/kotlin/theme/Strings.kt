@@ -4,19 +4,23 @@ const val author = "Kinnera Priya Putti"
 const val aboutMeScreenTitle = "About Me"
 const val aboutMeInfo = "Kinnera Priya Putti | she/her\n" +
         "Location: Near the sugar / Frankfurt\n" +
-        "Currently: Android @ ioki GmbH\n"
+        "Currently: Android @ ioki GmbH"
 
 const val listDetailSlideTitle = "List \uD83D\uDC9A Detail"
+const val listDetailDescription = "AnimatedVisibility"
 
 const val drawerSlideTitle = "Drawers"
+const val drawerDescription = "AnimatedContent | BottomSheetScaffold"
 
 const val dialogSlideTitle = "Dialogs"
+const val dialogDescription = "AnimatedVisibility within Dialog"
 const val dialogTitle = "Do you want a cupcake?"
 const val showDialogText = "Show dialog"
 const val noAnimationDialog = "No Animation"
 const val animationDialog = "With Animation"
 
 const val contentToContentSlideTitle = "Content to Content"
+const val contentToContentDescription = "Crossfade"
 
 const val summarySlideSlideTitle = "To sum it up"
 

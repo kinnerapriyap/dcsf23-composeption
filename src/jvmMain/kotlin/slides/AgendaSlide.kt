@@ -19,7 +19,7 @@ import listDetailSlideTitle
 import slides.content.ctoc.Content1ToContent2InfiniteAnimation
 import slides.content.dialog.DialogAnimationOnDevice
 import slides.content.drawer.NavDrawerInfiniteAnimationOnDevice
-import slides.content.listdetail.ListDetailInfiniteAnimationOnDevice
+import slides.content.listdetail.utils.ListDetailInfiniteAnimationOnDevice
 
 @Composable
 @Preview

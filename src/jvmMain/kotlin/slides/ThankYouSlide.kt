@@ -15,6 +15,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -37,25 +38,28 @@ fun ThankYouSlide(
             fontWeight = FontWeight.SemiBold,
             textAlign = TextAlign.Center
         )
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(80.dp))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
             Image(
                 painter = painterResource("ic_linkedin.png"),
-                contentDescription = null
+                contentDescription = null,
+                colorFilter = ColorFilter.tint(MaterialTheme.colors.primary)
             )
-            Spacer(modifier = Modifier.width(32.dp))
+            Spacer(modifier = Modifier.width(24.dp))
             Image(
                 painter = painterResource("ic_twitter.png"),
-                contentDescription = null
+                contentDescription = null,
+                colorFilter = ColorFilter.tint(MaterialTheme.colors.primary)
             )
         }
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(24.dp))
         Text(
             modifier = Modifier.fillMaxWidth(),
             text = "kinnerapriyap",
             style = MaterialTheme.typography.h2,
             fontWeight = FontWeight.SemiBold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            color = MaterialTheme.colors.primary
         )
     }
 }
