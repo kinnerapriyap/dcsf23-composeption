@@ -1,4 +1,4 @@
-package slides.content.listdetail
+package slides.content.listdetail.utils
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect

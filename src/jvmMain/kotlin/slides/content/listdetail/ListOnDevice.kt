@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import common.AndroidDeviceLazyColumn
+import slides.content.listdetail.utils.ListItem
 
 @Composable
 @Preview

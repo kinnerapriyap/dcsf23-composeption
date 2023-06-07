@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import common.AndroidDeviceLazyColumn
 import common.Back
+import slides.content.listdetail.utils.ListItem
 
 @Composable
 @Preview

@@ -1,6 +1,5 @@
 package slides.content.listdetail
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -15,10 +14,11 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import common.AndroidDeviceLazyColumn
 import common.Back
+import slides.content.listdetail.utils.ListItem
 
 @Composable
 @Preview
-fun ListDetailAnimationOnDeviceWrong(
+fun CurrentListDetailOnDevice(
     modifier: Modifier = Modifier,
     width: Dp = 300.dp,
     ratio: Float = 16f / 9f,
@@ -28,13 +28,13 @@ fun ListDetailAnimationOnDeviceWrong(
     AndroidDeviceLazyColumn(
         width = width,
         ratio = ratio,
-        verticalSpacing = 12.dp
+        verticalSpacing = if (selected == null) 12.dp else 0.dp
     ) {
         item {
             IconButton(modifier = Modifier.size(48.dp), onClick = { selected = null }) { Back() }
         }
         itemsIndexed(elements) { index, (title, subtitle) ->
-            AnimatedVisibility(visible = selected == null || selected == index) {
+            if (selected == null || selected == index) {
                 ListItem(
                     modifier = Modifier,
                     title = title,
@@ -43,9 +43,7 @@ fun ListDetailAnimationOnDeviceWrong(
             }
         }
         item {
-            AnimatedVisibility(visible = selected != null) {
-                selected?.let { DetailItem() }
-            }
+            selected?.let { DetailItem() }
         }
     }
 }

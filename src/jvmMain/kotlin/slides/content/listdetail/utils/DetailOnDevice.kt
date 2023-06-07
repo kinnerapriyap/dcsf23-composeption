@@ -1,4 +1,4 @@
-package slides.content.listdetail
+package slides.content.listdetail.utils
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.runtime.Composable
@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import common.AndroidDeviceLazyColumn
+import slides.content.listdetail.DetailItem
 
 @Composable
 @Preview

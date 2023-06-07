@@ -27,7 +27,7 @@ import slides.TitleSlide
 import slides.content.ctoc.ContentToContentSlide
 import slides.content.dialog.DialogSlideToShow
 import slides.content.drawer.DrawerSlide
-import slides.content.listdetail.ListDetailSlide
+import slides.content.listdetail.utils.ListDetailSlide
 
 
 private const val ANIMATION_TIME_SLIDE = 3000

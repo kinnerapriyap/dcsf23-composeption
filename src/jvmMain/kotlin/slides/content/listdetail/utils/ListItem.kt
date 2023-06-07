@@ -1,4 +1,4 @@
-package slides.content.listdetail
+package slides.content.listdetail.utils
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Column

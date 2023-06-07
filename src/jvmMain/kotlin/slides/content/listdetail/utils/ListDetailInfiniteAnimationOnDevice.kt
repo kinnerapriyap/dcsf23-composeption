@@ -1,4 +1,4 @@
-package slides.content.listdetail
+package slides.content.listdetail.utils
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import common.AndroidDeviceLazyColumn
 import common.Back
+import slides.content.listdetail.DetailItem
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
