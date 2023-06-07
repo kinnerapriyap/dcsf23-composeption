@@ -42,6 +42,10 @@ fun BottomSheetOnDevice() {
                 }
             },
             sheetPeekHeight = 150.dp
-        ) {}
+        ) {
+            val isExpanded = scaffoldState.bottomSheetState.isExpanded
+            val isCollapsed = scaffoldState.bottomSheetState.isCollapsed
+            val currentValue = scaffoldState.bottomSheetState.currentValue
+        }
     }
 }
