@@ -31,20 +31,20 @@ import moreButtonText
 fun Content1ToContent2Animation() {
     var expanded by remember { mutableStateOf(false) }
     AndroidDeviceSurface {
-        Crossfade(targetState = expanded) {
+        Crossfade(targetState = expanded) { targetState ->
             Column(
                 modifier = Modifier.fillMaxSize().padding(16.dp),
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = if (it) cupcakeIpsum else cupcakeIpsumShort,
+                    text = if (targetState) cupcakeIpsum else cupcakeIpsumShort,
                     textAlign = TextAlign.Center
                 )
                 Button(
                     modifier = Modifier.align(Alignment.CenterHorizontally).animateContentSize(),
                     onClick = { expanded = !expanded }
                 ) {
-                    Text(text = if (it) lessButtonText else moreButtonText)
+                    Text(text = if (targetState) lessButtonText else moreButtonText)
                 }
             }
         }
