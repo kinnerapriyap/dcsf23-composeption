@@ -1,1 +1,3 @@
 <a href="https://www.flaticon.com/free-icons/next-level" title="next level icons">Next level icons created by Freepik - Flaticon</a>
+<a target="_blank" href="https://icons8.com/icon/7yq97V51VWpL/twitter">Twitter</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/NTCUeTIie8CC/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
