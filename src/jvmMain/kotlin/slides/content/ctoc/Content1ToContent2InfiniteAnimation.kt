@@ -1,7 +1,6 @@
 package slides.content.ctoc
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -21,7 +20,6 @@ import common.AndroidDeviceSurface
 import cupcakeIpsum
 import cupcakeIpsumShort
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 @Preview
 fun Content1ToContent2InfiniteAnimation() {

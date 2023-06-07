@@ -1,7 +1,6 @@
 package slides.content.ctoc
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.animateContentSize
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Arrangement
@@ -25,7 +24,6 @@ import cupcakeIpsumShort
 import lessButtonText
 import moreButtonText
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 @Preview
 fun Content1ToContent2Animation() {
